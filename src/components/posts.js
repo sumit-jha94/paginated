@@ -1,6 +1,16 @@
 import React, {useEffect, useState} from 'react';
 import Axios from 'axios';
 import _ from "lodash";
+import {
+    
+    Routes,
+    Route,
+    Link,
+    Router
+  } from "react-router-dom";
+
+
+
 
 const pageSize = 10;
 const Posts = () => {
@@ -51,7 +61,7 @@ const Posts = () => {
                             <td>{post.title}</td>
                             <td> 
                                 <p className={post.completed? "btn btn-success" : "btn btn-danger"}>
-                                    {post.completed? "completed": "Pending" }</p>
+                                    {post.completed? "Completed": "Pending" }</p>
                             </td>
                         </tr>
                     )
@@ -59,17 +69,23 @@ const Posts = () => {
             </tbody>
         </table>
     )}
+    
+    
       <nav className='d-flex justify-content-center'>
+      
           <ul className='pagination'>
                 {
                     pages.map((page)=>(
                         
-                    <li className='page-link' onClick={()=>pagination(page)}    >{page}</li>
+                    <li className='page-link' onClick={()=>pagination(page)}  >{page}</li>
                     ))
                 }
 
           </ul>
+          
       </nav>
+      
+     
         </div>;
   
 };
