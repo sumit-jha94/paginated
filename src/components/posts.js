@@ -1,24 +1,12 @@
 import React, {useEffect, useState} from 'react';
 import Axios from 'axios';
 import _ from "lodash";
-import {
-    
-    Routes,
-    Route,
-    Link,
-    Router
-  } from "react-router-dom";
-
-
-
 
 const pageSize = 10;
 const Posts = () => {
   const [posts, setPosts] = useState();
   const [paginatedPost, setPaginatedPost] = useState();
   const [currentPage, setCurrentPage] = useState();
-
-
 
   useEffect(() =>{
       Axios.get(`https://jsonplaceholder.typicode.com/todos`)
