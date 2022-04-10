@@ -32,7 +32,7 @@ const Posts = () => {
 
 
     return <div>{
-    !posts ? ("No Data Found") : (
+    !paginatedPost ? ("No Data Found") : (
         <table className='table'>
             <thead>
                 <tr>
@@ -44,7 +44,7 @@ const Posts = () => {
             </thead>
             <tbody>
                 {
-                    posts.map((post, index)=> 
+                    paginatedPost.map((post, index)=> 
                         <tr key={index}>
                             <td>{post.id}</td>
                             <td>{post.userId}</td>
